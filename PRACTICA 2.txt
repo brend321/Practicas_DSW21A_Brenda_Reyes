@@ -1,0 +1,28 @@
+fun main() {
+    val notas = DoubleArray(5)
+    var suma = 0.0
+    var i = 0
+
+    while (i < notas.size) {
+        println("Ingrese la nota del estudiante ${i + 1}:")
+
+        val inputStr = readLine()
+        if (inputStr == null) {
+            println("Entrada vacía detectada. Terminando el programa.")
+            return
+        }
+
+        val input = inputStr.toDoubleOrNull()
+
+        if (input != null && input in 0.0..20.0) {
+            notas[i] = input
+            suma += input
+            i++
+        } else {
+            println("Nota inválida. Intente de nuevo.")
+        }
+    }
+
+    val promedio = suma / notas.size
+    println("El promedio de las notas es: %.2f".format(promedio))
+}
