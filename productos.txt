@@ -1,0 +1,18 @@
+data class Producto(
+    val nombre: String,
+    val codigoDeBarra: String,
+    val fechaDeVencimiento: String,
+    val stock: Int,
+    val marca: String,
+    val precio: Double
+)
+
+fun main() {
+    val productos = listOf(
+        Producto("Leche Entera", "1234567890123", "2025-01-15", 50, "La Vaquita", 1.99),
+        Producto("Yogurt Natural", "1234567891011", "2025-12-05", 30, "Lácteos del Sur", 2.50),
+        Producto("Queso Fresco", "4567891234567", "2025-12-20", 20, "Delicias Andinas", 3.99)
+    )
+
+  println(productos[2])
+}
